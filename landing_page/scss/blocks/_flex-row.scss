@@ -1,0 +1,13 @@
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 360px) {
+    .flex-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 8px;
+    }
+}

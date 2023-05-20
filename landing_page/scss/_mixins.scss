@@ -1,0 +1,14 @@
+@mixin text($font-size, $font-weight, $line-height, $font-color) {
+    font-family: 'Poppins', sans-serif;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    color: $font-color;
+}
+
+@mixin title($font-size, $font-weight:400, $line-height: 84px) {
+    font-family: 'Playfair Display', serif;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;
+}

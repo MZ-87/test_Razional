@@ -1,0 +1,28 @@
+@import 'fonts';
+@import 'vars';
+@import 'mixins';
+@import "normalize";
+
+// @import 'blocks/block';
+// @import 'blocks/form';
+@import 'blocks/flex-row';
+// @import 'blocks/btn-primary_custom';
+// @import 'blocks/footer';
+// @import 'blocks/image-container';
+// @import 'blocks/image';
+
+body {
+    font-family: 'Golos Text', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 1512px;
+    margin: 0 auto;
+    padding: 0 100px;
+}
+
+.absolute {
+    position: absolute;
+}
