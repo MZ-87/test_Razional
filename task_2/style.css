@@ -7,6 +7,7 @@ body {
     display: flex;
     flex-direction: column;
     max-width: 25%;
+    margin: 0 auto;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -17,7 +18,7 @@ body {
 
 #userInfo {
     font-size: 18px;
-}
+}   
 
 .input-wrapper,
 .btns-wrapper {
