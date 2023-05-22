@@ -4,23 +4,33 @@
 @import "normalize";
 
 @import 'blocks/flex-row';
+@import 'blocks/flex-col';
 
 * {
     box-sizing: content-box;
 }
 
+html {
+    background-color: $bg-dark;
+}
+
 body {
+    max-width: 1512px;
+    margin: 0 auto;
     font-family: 'Golos Text', sans-serif;
 }
 
 .wrapper {
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
     max-width: 1512px;
     margin: 0 auto;
     padding: 0 100px;
-    background-color: rgb(253, 250, 247);
+    background-color: $body-bg;
     border: 1px solid red;
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 40px;
 }
 
 .absolute {
@@ -28,6 +38,7 @@ body {
 }
 
 h1,
+h2,
 p {
     margin: 0;
 }
@@ -41,14 +52,38 @@ a {
 }
 
 .inner-top {
+    display: grid;
+    grid-template-columns: 5fr 0.2fr 1fr;
     width: 100%;
+    margin: 0 auto;
     padding: 11px 0;
     background-color: $bg-dark;
 
     &-slogan {
+        margin-right: auto;
+        margin-left: 605px;
         text-transform: uppercase;
         text-align: center;
         color: $text-color-white;
+    }
+
+    &_bg-white {
+        background-color: $body-bg;
+    }
+
+    &__hashtag {
+        @include title(32px, 400, 36.14px);
+        color: $text-color-dark;
+    }
+
+    &__subscribe {
+        justify-self: flex-end;
+        @include text(16px, 400, 24px, $text-color-dark);
+        text-transform: uppercase;
+    }
+
+    &__icon {
+        justify-self: center;
     }
 }
 
@@ -66,7 +101,17 @@ a {
 
 .social-net-container {
     gap: 24px;
-    margin-left: 100px;
+
+    &_bottom {
+        gap: 30px;
+        margin-top: 45px;
+        margin-left: 42px;
+    }
+
+    &_bottom .social-net__icon {
+        width: 25px;
+        height: 25px;
+    }
 }
 
 //banner
@@ -81,9 +126,22 @@ a {
     &_bold {
         font-weight: 600;
     }
+
+    &_white {
+        align-self: flex-end;
+        margin-right: 100px;
+        margin-bottom: 33px;
+        @include text(19px, 400, 8px, $text-color-white);
+    }
 }
 
 .banner {
+    margin-bottom: 142px;
+
+    &-info {
+        position: relative;
+    }
+
     &-title {
         position: relative;
         margin-top: 89px;
@@ -107,7 +165,229 @@ a {
         margin-left: 65px;
     }
 }
- //кнопка баннера
+
+//кнопка баннера
+.link-wrapper {
+    max-width: 160px;
+    padding-top: 17px;
+    padding-bottom: 11px;
+    border: 1px solid $text-color-dark;
+    border-radius: 7px;
+    text-align: center;
+
+    &_absolute {
+        position: absolute;
+        top: 306px;
+        left: 6px;
+        max-width: 160px;
+        padding: 17px 8px 11px;
+        border: 1px solid $text-color-dark;
+        border-radius: 7px;
+        background-color: rgba(250, 250, 250, 0);
+        @include text(18px, 400, 27px, $text-color-dark);
+        color: rgba(250, 250, 250, 0);
+    }
+}
+
+.banner-link {
+    @include text(18px, 400, 27px, $text-color-dark);
+}
+
+.footer-link-wrapper {
+    max-width: 160px;
+    padding-top: 17px;
+    padding-bottom: 11px;
+    border: 1px solid $text-color-dark;
+    border-radius: 7px;
+    text-align: center;
+
+    &_absolute {
+        position: absolute;
+        top: 306px;
+        left: 6px;
+        max-width: 160px;
+        padding: 17px 8px 11px;
+        border: 1px solid $text-color-dark;
+        border-radius: 7px;
+        background-color: rgba(250, 250, 250, 0);
+        @include text(18px, 400, 27px, $text-color-dark);
+        color: rgba(250, 250, 250, 0);
+    }
+}
 
 //new arrivals
+.new-arrivals .photo-gallery {
+    gap: 40px;
+    margin-right: -100px;
+    margin-left: 78px;
+}
 
+.photo-gallery-item-legend {
+    margin-top: 20px;
+    @include text(18px, 500, 27px, $text-color-dark);
+
+    &__price {
+        margin-left: auto;
+    }
+}
+
+.section-title {
+    @include title(60px);
+
+    &_newArr {
+        margin-top: 100px;
+        margin-bottom: 35px;
+    }
+
+    &_white {
+        @include title(74px);
+        color: $text-color-white;
+    }
+}
+
+.section-subtitle {
+    @include text(16px, 500, 8px, $text-color-light);
+}
+
+.section-text {
+    @include text(16px, 400, 28px, $text-color-light);
+
+    &_dark {
+        margin-top: 30px;
+        margin-right: 40px;
+        @include text(18px, 400, 27px, $text-color-dark);
+    }
+}
+
+.nav-link-wrapper {
+    max-width: 76px;
+    margin-top: 40px;
+    border-bottom: 1px solid $bg-dark;
+}
+
+.nav-link {
+    @include text(16px, 600, 24px, $text-color-dark);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+//designed for you
+.designed {
+    margin-top: 173px;
+    margin-bottom: 163px;
+
+    & .section-info {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        margin-bottom: 88px;
+    }
+
+    & .section-text {
+        margin-top: 20px;
+    }
+}
+
+.photo-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-content: space-between;
+}
+
+.photo-item {
+    &_tl {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        margin-bottom: 36px;
+    }
+
+    &_tr {
+        grid-column: 2/4;
+        grid-row: 1/2;
+        margin-left: auto;
+        margin-bottom: 36px;
+    }
+
+    &_bl {
+        grid-column: 1/3;
+        grid-row: 2/3;
+    }
+
+    &_br {
+        grid-column: 3/4;
+        grid-row: 2/3;
+    }
+}
+
+//redesign
+.redesign {
+    position: relative;
+    margin-left: -100px;
+    margin-right: -100px;
+    padding: 72px 80px 120px;
+    background-color: $bg-dark;
+}
+
+.section-slider {
+    justify-content: space-around;
+}
+
+.section-info {
+    &_absolute {
+        left: 100px;
+        top: 675px;
+    }
+}
+
+//follow
+.follow {
+    margin-top: 169px;
+}
+
+.photo-gallery {
+    justify-content: space-between;
+}
+
+//footer
+.footer {
+    position: relative;
+    margin-top: 96px;
+    margin-bottom: 98px;
+    justify-content: space-between;
+}
+
+.footer-col_right {
+    align-self: center;
+}
+
+.footer-disclaimer {
+    margin-top: 19px;
+    @include text(18px, 400, 27px, $text-color-dark);
+}
+
+.footer-link {
+    @include text(18px, 400, 27px, $text-color-dark);
+}
+
+.footer-link-wrapper {
+    max-width: 160px;
+    margin-top: 15px;
+    margin-right: 7px;
+    padding: 17px 25px 11px;
+    border: 1px solid $text-color-dark;
+    border-radius: 7px;
+    text-align: center;
+
+    &_absolute {
+        position: absolute;
+        top: 50px;
+        left: 1160px;
+        max-width: 160px;
+        padding: 17px 8px 11px;
+        border: 1px solid $text-color-dark;
+        border-radius: 7px;
+        background-color: rgba(250, 250, 250, 0);
+        @include text(18px, 400, 27px, $text-color-dark);
+        color: rgba(250, 250, 250, 0);
+    }
+}
