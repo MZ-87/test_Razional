@@ -325,6 +325,10 @@ template {
     margin-bottom: 8px;
   }
 }
+* {
+  box-sizing: content-box;
+}
+
 body {
   font-family: "Golos Text", sans-serif;
 }
@@ -335,8 +339,94 @@ body {
   max-width: 1512px;
   margin: 0 auto;
   padding: 0 100px;
+  background-color: rgb(253, 250, 247);
+  border: 1px solid red;
 }
 
 .absolute {
   position: absolute;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  width: 100%;
+}
+
+.inner-top {
+  width: 100%;
+  padding: 11px 0;
+  background-color: #000000;
+}
+.inner-top-slogan {
+  text-transform: uppercase;
+  text-align: center;
+  color: #ffffff;
+}
+
+.inner-bottom {
+  width: 100%;
+  justify-content: space-between;
+  padding-top: 47px;
+  padding-bottom: 142px;
+}
+.inner-bottom-slogan {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 27.11px;
+  text-transform: uppercase;
+}
+
+.social-net-container {
+  gap: 24px;
+  margin-left: 100px;
+}
+
+.slogan_aside {
+  margin-top: 157px;
+  margin-right: 286px;
+  writing-mode: vertical-rl;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 8px;
+  color: #000000;
+}
+.slogan_bold {
+  font-weight: 600;
+}
+
+.banner-title {
+  position: relative;
+  margin-top: 89px;
+  margin-right: -64px;
+  font-family: "Playfair Display", serif;
+  font-size: 74px;
+  font-weight: 400;
+  line-height: 84px;
+  z-index: 1;
+}
+.banner-subtitle {
+  margin-top: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 8px;
+  color: #797979;
+}
+.banner-img {
+  max-width: 646px;
+  margin-left: auto;
+}
+.banner-nav-arrow {
+  margin-top: 260px;
+  margin-left: 65px;
 }/*# sourceMappingURL=style.css.map */

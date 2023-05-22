@@ -3,13 +3,11 @@
 @import 'mixins';
 @import "normalize";
 
-// @import 'blocks/block';
-// @import 'blocks/form';
 @import 'blocks/flex-row';
-// @import 'blocks/btn-primary_custom';
-// @import 'blocks/footer';
-// @import 'blocks/image-container';
-// @import 'blocks/image';
+
+* {
+    box-sizing: content-box;
+}
 
 body {
     font-family: 'Golos Text', sans-serif;
@@ -21,8 +19,95 @@ body {
     max-width: 1512px;
     margin: 0 auto;
     padding: 0 100px;
+    background-color: rgb(253, 250, 247);
+    border: 1px solid red;
 }
 
 .absolute {
     position: absolute;
 }
+
+h1,
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    width: 100%;
+}
+
+.inner-top {
+    width: 100%;
+    padding: 11px 0;
+    background-color: $bg-dark;
+
+    &-slogan {
+        text-transform: uppercase;
+        text-align: center;
+        color: $text-color-white;
+    }
+}
+
+.inner-bottom {
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 47px;
+    padding-bottom: 142px;
+
+    &-slogan {
+        @include title(24px, 400, 27.11px);
+        text-transform: uppercase;
+    }
+}
+
+.social-net-container {
+    gap: 24px;
+    margin-left: 100px;
+}
+
+//banner
+.slogan {
+    &_aside {
+        margin-top: 157px;
+        margin-right: 286px;
+        writing-mode: vertical-rl;
+        @include text(20px, 500, 8px, $text-color-dark);
+    }
+
+    &_bold {
+        font-weight: 600;
+    }
+}
+
+.banner {
+    &-title {
+        position: relative;
+        margin-top: 89px;
+        margin-right: -64px;
+        @include title(74px);
+        z-index: 1;
+    }
+
+    &-subtitle {
+        margin-top: 20px;
+        @include text(16px, 500, 8px, $text-color-light);
+    }
+
+    &-img {
+        max-width: 646px;
+        margin-left: auto;
+    }
+
+    &-nav-arrow {
+        margin-top: 260px;
+        margin-left: 65px;
+    }
+}
+ //кнопка баннера
+
+//new arrivals
+
