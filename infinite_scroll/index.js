@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 })
 
 function fetchImages() {
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 20; i++) {
         fetch('https://dog.ceo/api/breeds/image/random')
             .then(response => response.json())
             .then(data => appendImg(data))
@@ -53,9 +53,23 @@ function checkPosition() {
         fetchImages();
     }
 }
+//замедляем скролл
+function throttle(callee, timeout) {
+    let timer = null
 
-;
+    return function perform(...args) {
+        if (timer) return
+
+        timer = setTimeout(() => {
+            callee(...args)
+
+            clearTimeout(timer)
+            timer = null
+        }, timeout)
+    }
+};
+
 (() => {
-    window.addEventListener('scroll', checkPosition)
-    window.addEventListener('resize', checkPosition)
+    window.addEventListener('scroll', throttle(checkPosition, 150))
+    window.addEventListener('resize', throttle(checkPosition, 150))
 })()

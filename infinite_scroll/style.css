@@ -1,12 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+}
+
 
 * {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
 }
 
 .wrapper {
-    width: 100vw;
+    width: 95vw;
+    margin: 0 auto;
 }
 
 .header {
@@ -34,35 +39,30 @@
     padding: 0.5em;
 }
 
-.search__img {
-    min-height: 1.5rem;
-    margin-right: 1em;
+.search__submit{
+    font-size: 1.2em;
+    padding: 0.5em 2em;
+    border-radius: 1em;
+    border: none;
+    background-color: rgb(212, 209, 209);
 }
 
-/* .frame-area {
-    max-height: calc(100vh - 100px);
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    margin-right: 1em;
-    margin-left: 1em;
-} */
-
-.frame-area{
-    display: flex;
-    /* flex-direction: column; */
-    flex-wrap: wrap;
-    min-height: 100px;
-    flex-basis: 300px;
-    /* max-width: 300px; */
+.frame-area {
+    column-width: 300px;
+    column-gap: 15px;
+    width: 100%;
+    margin: 5px auto;
 }
 
-.frame{
+.frame {
     max-width: 300px;
     padding: 0.5em;
+    display: inline-block;
+    break-inside: avoid;
 }
 
-.frame__img { 
-    max-width: 100%;  
-    border-radius: 2em;
+.frame__img {
+    max-width: 100%;
     margin-top: 1em;
+    border-radius: 2em;
 }
