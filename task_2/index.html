@@ -5,46 +5,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap">
+    <link rel="stylesheet" href="./style.css">
     <title>Document</title>
 </head>
 
 <body>
     <header>
-        <h1>Добавление адреса</h1>
+        <h1 class="title">Добавление адреса</h1>
     </header>
     <main class="form">
         <form action="#" id="userInfo">
             <div class="input-wrapper">
                 <label for="index">Индекс*</label>
-                <input type="number" class="index" id="index" name="index" required>
+                <input type="number" class="input" id="index" name="index" required>
             </div>
             <div class="input-wrapper">
                 <label for="country">Страна*</label>
-                <input type="text" class="country" id="country" name="country" required>
+                <input type="text" class="input" id="country" name="country" required>
             </div>
             <div class="input-wrapper">
                 <label for="region">Регион*</label>
-                <input type="text" class="region" id="region" name="region" required>
+                <input type="text" class="input" id="region" name="region" required>
             </div>
             <div class="input-wrapper">
                 <label for="city">Город*</label>
-                <input type="text" class="city" id="city" name="city" required>
+                <input type="text" class="input" id="city" name="city" required>
             </div>
             <div class="input-wrapper">
                 <label for="street">Улица*</label>
-                <input type="text" class="street" id="street" name="street" required>
+                <input type="text" class="input" id="street" name="street" required>
             </div>
             <div class="input-wrapper">
                 <label for="home-number">Дом*</label>
-                <input type="number" class="home_number" id="home_number" name="home_number" required>
+                <input type="number" class="input" id="home_number" name="home_number" required>
             </div>
             <div class="input-wrapper">
                 <label for="main-address">Основной адрес</label>
-                <input type="checkbox" class="main_address" id="main_address" name="main_address">
+                <input type="checkbox" class="checkbox" id="main_address" name="main_address">
             </div>
             <div class="btns-wrapper">
-                <button class="submit" type="submit">Добавить</button>
-                <button class="cancel" type="reset">Отменить</button>
+                <button class="btn btn_submit" type="submit">Добавить</button>
+                <button class="btn btn_cancel" type="reset">Отменить</button>
             </div>
         </form>
     </main>
