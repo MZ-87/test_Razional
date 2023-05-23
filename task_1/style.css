@@ -1,7 +1,74 @@
-.wrapper{
-    max-width: 60%;
-    margin: auto;
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper {
+    max-width: 100%;
+    margin: 2em auto;
+
+}
+
+input,
+select {
+    display: inline-block;
+    height: 3em;
+}
+
+
+.inputs-wrapper {
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 1em;
+    margin-bottom: 2em;
+    padding: 1em;
+}
+
+.input_1 {
+    grid-column: 1/5;
+    grid-row: 1/2;
+}
+
+.input_2 {
+    grid-column: 5/13;
+    grid-row: 1/2;
+}
+
+.input_3 {
+    grid-column: 1/5;
+    grid-row: 2/3;
+}
+
+.input_4 {
+    grid-column: 1/13;
+    grid-row: 3/4;
+}
+
+.input_5 {
+    grid-column: 1/5;
+    grid-row: 4/5;
+}
+
+.btns-wrapper {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1em;
+    margin-bottom: 2em;
 }
+
+.btn {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+/* .hidden{
+    display: none;
+} */
