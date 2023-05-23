@@ -55,21 +55,21 @@ function checkPosition() {
 }
 //замедляем скролл
 function throttle(callee, timeout) {
-    let timer = null
+    let timer = null;
 
     return function perform(...args) {
-        if (timer) return
+        if (timer) return;
 
         timer = setTimeout(() => {
-            callee(...args)
+            callee(...args);
 
-            clearTimeout(timer)
-            timer = null
+            clearTimeout(timer);
+            timer = null;
         }, timeout)
     }
 };
 
 (() => {
-    window.addEventListener('scroll', throttle(checkPosition, 150))
-    window.addEventListener('resize', throttle(checkPosition, 150))
+    window.addEventListener('scroll', throttle(checkPosition, 150));
+    window.addEventListener('resize', throttle(checkPosition, 150));
 })()
