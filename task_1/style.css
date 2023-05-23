@@ -72,3 +72,11 @@ select {
 /* .hidden{
     display: none;
 } */
+.even{
+    background-color: rgb(42, 42, 251);
+    color: white;
+}
+
+.odd{
+    background-color: rgb(241, 74, 74);
+}

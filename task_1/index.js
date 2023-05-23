@@ -9,51 +9,71 @@ const form = document.querySelector('.inputs-wrapper');
 
 form.addEventListener('reset', (e) => {
     form.reset();
+
+    if (input4.classList.contains('even')) {
+        input4.classList.remove('even');
+    } else if (input4.classList.contains('odd')) {
+        input4.classList.remove('odd')
+    }
+
+    input3.replaceChildren();
+    input3.setAttribute('disabled','disabled');    
 })
 
-
-
-// console.log(input2.classList);
-//show second input
 input1.addEventListener('input', (e) => {
-    input2.classList.remove('hidden');
-    fillInput2();
+    input2.classList.remove('hidden'); 
+    fillInput2(); 
     multiplyInput1OnInput2();
+    createResultString();
 })
 
-//create an array of nums to put in the second input
 function fillInput2() {
     let numArr = [];
     let arrElem = 0;
-    while (arrElem < 10) {
+    while (arrElem < 100) {
         arrElem++;
         numArr.push(arrElem);
     }
-    // console.log(input2.value);
-    // console.log(numArr);
     input2.value = numArr;
+    return numArr;
 }
 
-//create an array of multiply results
-let newArr = [];
-
 function multiplyInput1OnInput2() {
-    let numArr = input2.value.split(',');
-    // let newArr = [];
+    let numArr = fillInput2();
+    let numString = '';
+
     numArr.forEach((item) => {
         let result = item * input1.value;
         input3.insertAdjacentHTML("beforeEnd", `<option value="${result}">${result}</option>`);
-        // newArr.push(result);
+        numString += result;
     })
+
     input3.removeAttribute('disabled');
-    // console.log(newArr);
-    // fillOptionsInput3();
-    // return newArr;
+    return numString;
 }
 
-// function fillOptionsInput3() {
-//     for (let i = 0; i < newArr.length; i++) {
-//         input3.insertAdjacentHTML("afterbegin", `<option value="${i}">${i}</option>`)
-//     }
-// }
+function createResultString() {
+    let string1 = input1.value;
+    let string2 = fillInput2().join('');
+    let string3 = multiplyInput1OnInput2();
 
+    let bigStr = string1 + string2 + string3;
+    input4.value = bigStr;
+
+    isEven(bigStr);
+}
+
+function isEven(str) {
+    let num = BigInt(str);
+    if (num % 2n == 0) {
+        input4.classList.add('even');
+    } else {
+        input4.classList.add('odd');
+    }
+    showModulo(num);
+}
+
+function showModulo(num) {
+    let modulo = num % BigInt(input1.value);
+    input5.value = modulo;
+}
