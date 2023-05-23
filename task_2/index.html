@@ -15,18 +15,10 @@
         <h1 class="title">Добавление адреса</h1>
     </header>
     <main class="form">
-        <form action="здесь будет путь к скрипту на сервере — по этому адресу мы зальём нужный файл на следующем этапе" id="userInfo">
+        <form action="" id="userInfo">
             <div class="input-wrapper">
                 <label for="index">Индекс*</label>
                 <input type="number" class="input" id="index" name="index" required>
-            </div>
-            <div class="input-wrapper">
-                <label for="country">Страна*</label>
-                <input type="text" class="input" id="country" name="country" required>
-            </div>
-            <div class="input-wrapper">
-                <label for="region">Регион*</label>
-                <input type="text" class="input" id="region" name="region" required>
             </div>
             <div class="input-wrapper">
                 <label for="city">Город*</label>
@@ -45,10 +37,12 @@
                 <input type="checkbox" class="checkbox" id="main_address" name="main_address">
             </div>
             <div class="btns-wrapper">
-                <input type="submit" value="Добавить" class="btn btn_submit">
-                <input type="submit" value="Отменить" class="btn btn_cancel">
+                <button class="btn btn_submit" type="submit">Добавить</button>
+                <button class="btn btn_cancel" type="reset">Отменить</button>
             </div>
         </form>
+
+        <div class="result"></div>
     </main>
 
 
