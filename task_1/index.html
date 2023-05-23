@@ -11,22 +11,25 @@
 
 <body>
     <div class="wrapper">
-        <form class="inputs-wrapper">
-            <input type="number" placeholder="Введите значение" class="input_1" value="">
-            <input type="text" class="hidden input_2" value="">
-            <select name="selector" id="selector" class="input_3" disabled >
+        <form class="inputs-wrapper" id="form">
+            <input class="input_1" type="number" placeholder="Введите значение" value="" name="поле 1">
+            <input class="input_2 hidden" type="text" value="" name="поле 2">
+            <select id="selector" class="input_3" name="поле 3" disabled>
             </select>
 
-            <input type="text" class="input_4" value="">
-            <input type="number" class="input_5" value="" disabled>
+            <input class="input_4" type="text" value="" name="поле 4">
+            <input class="input_5" type="number" value="" name="поле 5" disabled>
+            
             <button class="btn btn_reset" type="reset">Очистить поля</button>
+            <button class="btn btn_fill">Заполнить поля</button>
+            <button class="btn btn_write">Записать SQL запрос</button>
+            <button class="btn btn_show">Вывести значения полей</button>
+            <button class="btn btn_show-last-row">Показать последнюю строку</button>
         </form>
-        <div class="btns-wrapper">
-            <button class="btn">Вывести</button>
-            <button class="btn">Записать данные</button>
-            <button class="btn">Показать последнюю строку</button>
-            <button class="btn">Заполнить поля</button>
-        </div>
+<div class="show-input-values"></div>
+        <table>
+
+        </table>
     </div>
 
     <script src="./index.js"></script>

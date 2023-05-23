@@ -5,7 +5,10 @@ const input2 = document.querySelector('.input_2');
 const input3 = document.querySelector('.input_3');
 const input4 = document.querySelector('.input_4');
 const input5 = document.querySelector('.input_5');
-const form = document.querySelector('.inputs-wrapper');
+const btnShow = document.querySelector('.btn_show');
+const btnFill = document.querySelector('.btn_fill');
+const resultArea = document.querySelector('.show-input-values');
+const form = document.getElementById('form');
 
 form.addEventListener('reset', (e) => {
     form.reset();
@@ -17,12 +20,14 @@ form.addEventListener('reset', (e) => {
     }
 
     input3.replaceChildren();
-    input3.setAttribute('disabled','disabled');    
+    input3.setAttribute('disabled', 'disabled');
+
+    resultArea.innerText = '';
 })
 
 input1.addEventListener('input', (e) => {
-    input2.classList.remove('hidden'); 
-    fillInput2(); 
+    input2.classList.remove('hidden');
+    fillInput2();
     multiplyInput1OnInput2();
     createResultString();
 })
@@ -30,7 +35,7 @@ input1.addEventListener('input', (e) => {
 function fillInput2() {
     let numArr = [];
     let arrElem = 0;
-    while (arrElem < 100) {
+    while (arrElem < 5) {
         arrElem++;
         numArr.push(arrElem);
     }
@@ -77,3 +82,28 @@ function showModulo(num) {
     let modulo = num % BigInt(input1.value);
     input5.value = modulo;
 }
+
+btnShow.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    resultArea.innerText += `
+    Значение поля 1: ${input1.value}
+    Значение поля 2: ${input2.value}
+    Значение поля 3: ${input3.value}
+    Значение поля 4: ${input4.value}
+    Значение поля 5: ${input5.value}
+    `;
+})
+
+btnFill.addEventListener('click', (e) => {
+    e.preventDefault();
+    resultArea.innerText = '';
+    input3.replaceChildren();
+
+    let randomNum1 = Math.floor(Math.random() * (100 - 1) + 1);
+    input1.value = randomNum1;
+    input2.classList.remove('hidden');
+    fillInput2();
+    multiplyInput1OnInput2();
+    createResultString();
+})
