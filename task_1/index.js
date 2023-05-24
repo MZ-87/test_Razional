@@ -9,11 +9,9 @@ const input5 = document.querySelector('.input_5');
 const btnShow = document.querySelector('.btn_show');
 const btnFill = document.querySelector('.btn_fill');
 const btnWriteSQLRequest = document.querySelector('.btn_writeSQLrequest');
-const btnLastRow = document.querySelector('.btn_show-last-row');
 
 const resultArea = document.querySelector('.result-area');
 const requestArea = document.querySelector('.request-area');
-const lastDataArea = document.querySelector('.last-data');
 
 const form = document.getElementById('form');
 
@@ -144,8 +142,8 @@ function appendRow(...data) {
 }
 
 function composeRow(id, inp1, inp2, inp3, inp4, inp5) {
-    const template = document.querySelector('#frame-template')
-    const row = template.content.cloneNode(true)
+    const template = document.querySelector('#frame-template');
+    const row = template.content.cloneNode(true);
 
     row.querySelector('.id').innerText = id;
     row.querySelector('.field1').innerText = inp1;
@@ -156,9 +154,3 @@ function composeRow(id, inp1, inp2, inp3, inp4, inp5) {
 
     return row;
 }
-
-btnLastRow.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    lastDataArea.innerText = '';
-})
