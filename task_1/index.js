@@ -5,9 +5,16 @@ const input2 = document.querySelector('.input_2');
 const input3 = document.querySelector('.input_3');
 const input4 = document.querySelector('.input_4');
 const input5 = document.querySelector('.input_5');
+
 const btnShow = document.querySelector('.btn_show');
 const btnFill = document.querySelector('.btn_fill');
-const resultArea = document.querySelector('.show-input-values');
+const btnWriteSQLRequest = document.querySelector('.btn_writeSQLrequest');
+const btnLastRow = document.querySelector('.btn_show-last-row');
+
+const resultArea = document.querySelector('.result-area');
+const requestArea = document.querySelector('.request-area');
+const lastDataArea = document.querySelector('.last-data');
+
 const form = document.getElementById('form');
 
 form.addEventListener('reset', (e) => {
@@ -23,6 +30,7 @@ form.addEventListener('reset', (e) => {
     input3.setAttribute('disabled', 'disabled');
 
     resultArea.innerText = '';
+    requestArea.innerText = '';
 })
 
 input1.addEventListener('input', (e) => {
@@ -35,7 +43,7 @@ input1.addEventListener('input', (e) => {
 function fillInput2() {
     let numArr = [];
     let arrElem = 0;
-    while (arrElem < 5) {
+    while (arrElem < 100) {
         arrElem++;
         numArr.push(arrElem);
     }
@@ -83,15 +91,20 @@ function showModulo(num) {
     input5.value = modulo;
 }
 
+//buttons
 btnShow.addEventListener('click', (e) => {
     e.preventDefault();
 
-    resultArea.innerText += `
-    Значение поля 1: ${input1.value}
-    Значение поля 2: ${input2.value}
-    Значение поля 3: ${input3.value}
-    Значение поля 4: ${input4.value}
-    Значение поля 5: ${input5.value}
+    resultArea.innerText += `Значение поля 1: 
+    ${input1.value}
+    Значение поля 2: 
+    ${input2.value}
+    Значение поля 3: 
+    ${input3.value}
+    Значение поля 4: 
+    ${input4.value}
+    Значение поля 5: 
+    ${input5.value}
     `;
 })
 
@@ -106,4 +119,46 @@ btnFill.addEventListener('click', (e) => {
     fillInput2();
     multiplyInput1OnInput2();
     createResultString();
+})
+
+let idCounter = 0;
+btnWriteSQLRequest.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    requestArea.innerText = '';
+    idCounter++;
+    let request = `
+    INSERT INTO myTable (ID, Поле1, Поле2, Поле3, Поле4, Поле5)
+    VALUES ('${idCounter}', '${input1.value}', '${input2.value}', '${input3.value}', '${input4.value}','${input4.value}');
+    `
+    requestArea.innerText = request;
+
+    appendRow(idCounter, input1.value, input2.value, input3.value, input4.value, input5.value);
+})
+
+function appendRow(...data) {
+    const table = document.querySelector('#myTable');
+    const tableRow = composeRow(...data);
+
+    table.append(tableRow);
+}
+
+function composeRow(id, inp1, inp2, inp3, inp4, inp5) {
+    const template = document.querySelector('#frame-template')
+    const row = template.content.cloneNode(true)
+
+    row.querySelector('.id').innerText = id;
+    row.querySelector('.field1').innerText = inp1;
+    row.querySelector('.field2').innerText = inp2;
+    row.querySelector('.field3').innerText = inp3;
+    row.querySelector('.field4').innerText = inp4;
+    row.querySelector('.field5').innerText = inp5;
+
+    return row;
+}
+
+btnLastRow.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    lastDataArea.innerText = '';
 })
