@@ -41,7 +41,7 @@ input1.addEventListener('input', (e) => {
 function fillInput2() {
     let numArr = [];
     let arrElem = 0;
-    while (arrElem < 100) {
+    while (arrElem < 10) {
         arrElem++;
         numArr.push(arrElem);
     }

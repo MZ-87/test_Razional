@@ -76,3 +76,18 @@
     margin-top: 1em;
     border-radius: 2em;
 }
+
+/* masonry-layout native */
+/* .frame-area{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: masonry;
+    gap: 10px;
+    margin-right: 1em;
+    margin-left: 1em;
+}
+.frame__img {
+    max-width: 100%;
+    margin-top: 1em;
+    border-radius: 2em;
+} */
