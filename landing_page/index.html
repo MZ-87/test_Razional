@@ -6,18 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Mariya Zeleneva">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap./5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./scss/style.css">
     <title>Document</title>
 </head>
 
 <body>
+    <div class="inner-top">
+        <p class="inner-top-slogan">Make room for better living</p>
+    </div>
     <div class="wrapper">
-        <header class="flex-row">
-            <div class="inner-top">
-                <p class="inner-top-slogan">Make room for better living</p>
-            </div>
+        <header class="header">
             <div class="inner-bottom flex-row">
                 <div class="social-net-container flex-row">
                     <a href="#" class="social-net-link"><img src="./img/icons/instagram.svg" alt="instagram"
@@ -30,7 +28,8 @@
                 <div class="inner-bottom-slogan">
                     <p>Nick Russel</p>
                 </div>
-                <div class="burger-menu"><img src="" alt="" class="burger-menu__icon"></div>
+                <div class="burger-menu"><img src="./img/icons/burger-menu.png" alt="burger menu"
+                        class="burger-menu__icon"></div>
             </div>
         </header>
         <main class="main">
@@ -39,13 +38,13 @@
                     <p class="slogan slogan_aside">Book an orientation with <span class="slogan slogan_bold">Nick
                             Russel</span></p>
                 </aside>
-                <div class="banner-info flex-col">
+                <div class="banner-info">
                     <h1 class="banner-title">We Love Minimalism.</h1>
                     <h3 class="banner-subtitle">INTERIOR DESIGN</h3>
                     <div class="link-wrapper">
                         <a href="#" class="banner-link">View projects</a>
-                        <div class="link-wrapper absolute"></div>
                     </div>
+                    <div class="link-wrapper_absolute">View projects</div>
                     <img src="./img/icons/arrow_down.svg" alt="arrow down" class="banner-nav-arrow">
                 </div>
                 <img src="./img/banner.webp" alt="bedroom with a two-sized bed, picture on the wall and a ceiling lamp "
@@ -54,7 +53,7 @@
 
             <section class="new-arrivals flex-row">
                 <div class="section-info flex-col">
-                    <h2 class="section-title">New Arrivals</h2>
+                    <h2 class="section-title section-title_newArr">New Arrivals</h2>
                     <p class="section-text">We’ve designed and curated pieces that are a cut above your average home
                         goods, because when you level up your everyday objects, you elevate your daily rituals.</p>
                     <div class="nav-link-wrapper">
@@ -63,78 +62,75 @@
                 </div>
 
                 <div class="photo-gallery flex-row">
-                    <div class="photo-gallery-item grid">
-                        <img src="./img/slide_1.jpg" alt="" class="photo-gallery-item__img">
-                        <p class="photo-gallery-item__legend">Arm Sofas</p>
-                        <p class="photo-gallery-item__price">&#36; 45.80</p>
+                    <div class="photo-gallery-item flex-col">
+                        <img src="./img/slide_1.jpg" alt="corner sofa" class="photo-gallery-item__img">
+                        <div class="photo-gallery-item-legend flex-row">
+                            <p class="photo-gallery-item-legend__text">Arm Sofas</p>
+                            <p class="photo-gallery-item-legend__price">&#36; 45.80</p>
+                        </div>
                     </div>
 
-                    <div class="photo-gallery-item grid">
-                        <img src="./img/slide_2.jpg" alt="" class="photo-gallery-item__img">
-                        <p class="photo-gallery-item__legend">Living table</p>
-                        <p class="photo-gallery-item__price">&#36; 45.80</p>
+                    <div class="photo-gallery-item flex-col">
+                        <img src="./img/slide_2.jpg" alt="table for a living room" class="photo-gallery-item__img">
+                        <div class="photo-gallery-item-legend flex-row">
+                            <p class="photo-gallery-item-legend__text">Living table</p>
+                            <p class="photo-gallery-item-legend__price">&#36; 45.80</p>
+                        </div>
                     </div>
 
-                    <div class="photo-gallery-item grid">
-                        <img src="./img/slide_3.jpg" alt="" class="photo-gallery-item__img">
-                        <p class="photo-gallery-item__legend">Floor lamp</p>
-                        <p class="photo-gallery-item__price">&#36; 45.80</p>
+                    <div class="photo-gallery-item flex-col">
+                        <img src="./img/slide_3.jpg" alt="floor lamp" class="photo-gallery-item__img">
+                        <div class="photo-gallery-item-legend flex-row">
+                            <p class="photo-gallery-item-legend__text">Floor lamp</p>
+                        </div>
                     </div>
-                </div>
-                <div class="progress-bar"></div>
-                <div class="nav-btns-container flex-row">
-                    <img src="./img/icons/arrow_prev_unactive.svg" alt="button previous" class="nav-btn-prev">
-                    <img src="./img/icons/arrow_next.svg" alt="button next" class="nav-btn-next">
                 </div>
             </section>
 
-            <section class="designed grid">
-                <h2 class="section-title">Designed for you</h2>
-                <p class="section-text">We’ve designed and curated pieces that are a cut above your average home goods,
-                    because when you level up your everyday objects, you elevate your daily rituals. Let the magic
-                    happen.</p>
-                <img src="./img/photo_tl.jpg" alt="armchair and picture on the wall" class="photo-item photo-item_tl">
-                <img src="./img/photo_tr.jpg" alt="hall with a sofa and a kitchen" class="photo-item photo-item_tr">
-                <img src="./img/photo_bl.jpg" alt="sofa, armchair and a small table" class="photo-item photo-item_bl">
-                <img src="./img/photo_br.jpg" alt="kitchen" class="photo-item photo-item_br">
+            <section class="designed flex-col">
+                <div class="section-info">
+                    <h2 class="section-title">Designed for you</h2>
+                    <p class="section-text">We’ve designed and curated pieces that are a cut above your average home
+                        goods,
+                        because when you level up your everyday objects, you elevate your daily rituals. Let the magic
+                        happen.</p>
+                </div>
+                <div class="photo-container grid">
+                    <img src="./img/photo_tl.jpg" alt="armchair and picture on the wall"
+                        class="photo-item photo-item_tl">
+                    <img src="./img/photo_tr.jpg" alt="hall with a sofa and a kitchen" class="photo-item photo-item_tr">
+                    <img src="./img/photo_bl.jpg" alt="sofa, armchair and a small table"
+                        class="photo-item photo-item_bl">
+                    <img src="./img/photo_br.jpg" alt="kitchen" class="photo-item photo-item_br">
+                </div>
             </section>
 
-            <section class="redesign">
-                <p class="slogan">We design your <span class="slogan slogan_bold">home.</span></p>
+            <section class="redesign flex-col">
+                <p class="slogan slogan_white">We design your <span class="slogan slogan_bold">home.</span></p>
 
-                <img src="./img/icons/ellipse_prev.svg" alt="button previous"
-                    class="slider__nav-arrow slider__nav-arrow_left">
+                <div class="section-slider flex-row">
+                    <img src="./img/icons/ellipse_prev.svg" alt="button previous"
+                        class="slider__nav-arrow slider__nav-arrow_left">
 
-                <div class="slider-container">
-                    <img src="./img/big_slide_1.jpg" alt="hall and kitchen" class="slide slide_1">
+                    <div class="slider-container">
+                        <img src="./img/big_slide_1.jpg" alt="hall and kitchen" class="slide slide_1">
+                    </div>
+
+                    <img src="./img/icons/ellipse_next.svg" alt="" class="slider__nav-arrow slider__nav-arrow_right">
                 </div>
 
-                <img src="./img/icons/ellipse_next.svg" alt="" class="slider__nav-arrow slider__nav-arrow_right">
-
-                <div class="section-info absolute">
+                <div class="section-info section-info_absolute">
                     <p class="section-subtitle">PROJECT</p>
-                    <h2 class="section-title">Mono Redesign</h2>
+                    <h2 class="section-title section-title_white">Mono Redesign</h2>
                 </div>
             </section>
 
             <section class="follow">
-                <div class="vertical-rows grid">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                </div>
-
-                <div class="inner-top flex-row">
+                <div class="inner-top inner-top_bg-white">
                     <p class="inner-top__hashtag">#design</p>
+                    <img src="./img/icons/instagram.svg" alt="instagram" class="inner-top__icon">
                     <p class="inner-top__subscribe">Follow us on instagram</p>
+
                 </div>
                 <div class="photo-gallery flex-row">
                     <img src="./img/img_1.jpg" alt="a brown leather sofa" class="photo-gallery__item">
@@ -146,30 +142,30 @@
             </section>
         </main>
 
-        <footer class="flex-row">
-            <div class="flex-col footer-col footer-col_left">
-                <div class="social-net-container flex-row">
+        <footer class="footer flex-row">
+            <div class="footer-col footer-col_left flex-col">
+                <div class="flex-row">
                     <p class="section-title">Nick Russel</p>
-                    <a href="#" class="social-net-link"><img src="./img/icons/instagram.svg" alt="instagram"
-                            class="social-net__icon"></a>
-                    <a href="#" class="social-net-link"><img src="./img/icons/fb.svg" alt="facebook"
-                            class="social-net__icon"></a>
-                    <a href="#" class="social-net-link"><img src="./img/icons/linkedin.svg" alt="linkedin"
-                            class="social-net__icon"></a>
+                    <div class="social-net-container social-net-container_bottom flex-row">
+                        <a href="#" class="social-net-link"><img src="./img/icons/instagram.svg" alt="instagram"
+                                class="social-net__icon"></a>
+                        <a href="#" class="social-net-link"><img src="./img/icons/fb.svg" alt="facebook"
+                                class="social-net__icon"></a>
+                        <a href="#" class="social-net-link"><img src="./img/icons/linkedin.svg" alt="linkedin"
+                                class="social-net__icon"></a>
+                    </div>
                 </div>
-                <p class="disclaimer">&#169; Nick Russel - 2023 - All Rights Reserved</p>
+                <p class="footer-disclaimer">&#169; Nick Russel - 2023 - All Rights Reserved</p>
             </div>
 
-            <div class="flex-col footer-col footer-col_right">
-                <p class="section-text">Ready to get started?</p>
-                <div class="link-wrapper">
-                    <a href="#" class="banner-link">View projects</a>
-                    <div class="link-wrapper absolute"></div>
+            <div class="flex-row footer-col footer-col_right">
+                <p class="section-text section-text_dark">Ready to get started?</p>
+                <div class="footer-link-wrapper">
+                    <a href="#" class="footer-link">Let’s Talk</a>
                 </div>
+                <div class="footer-link-wrapper_absolute">View projects</div>
             </div>
         </footer>
     </div>
-
 </body>
-
 </html>

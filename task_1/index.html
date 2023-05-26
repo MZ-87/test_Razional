@@ -11,19 +11,52 @@
 
 <body>
     <div class="wrapper">
-        <input type="number">
-        <input type="number" min="1" max="100" class="hidden">
-        <input type="text" class="disabled">
-        <input type="text">
-        <input type="text">
+        <form class="inputs-wrapper" id="form">
+            <input class="input_1" type="number" placeholder="Введите значение" value="" name="поле 1">
+            <input class="input_2 hidden" type="text" value="" name="поле 2">
+            <select id="selector" class="input_3" name="поле 3" disabled>
+            </select>
+
+            <input class="input_4" type="text" value="" name="поле 4">
+            <input class="input_5" type="number" value="" name="поле 5" disabled>
+
+            <button class="btn btn_reset" type="reset">Очистить поля</button>
+            <button class="btn btn_fill">Заполнить поля</button>
+            <button class="btn btn_writeSQLrequest">Записать SQL запрос</button>
+            <button class="btn btn_show">Вывести значения полей</button>
+        </form>
+        <fieldset class="fieldset">
+            <legend>Значения полей</legend>
+            <div class="result-area"></div>
+        </fieldset>
+        <fieldset class="fieldset">
+            <legend>SQL запрос</legend>
+            <div class="request-area"></div>
+        </fieldset>
+
+        <table id="myTable">
+            <caption>Таблица введенных значений</caption>
+            <tr>
+                <th>ID</th>
+                <th>Поле 1</th>
+                <th>Поле 2</th>
+                <th>Поле 3</th>
+                <th>Поле 4</th>
+                <th>Поле 5</th>
+            </tr>
+        <template id="frame-template">
+            <tr>
+                <td class="id"></td>
+                <td class="field1"></td>
+                <td class="field2"></td>
+                <td class="field3"></td>
+                <td class="field4"></td>
+                <td class="field5"></td>
+            </tr>
+        </template>
     </div>
-    <div class="btns-wrapper">
-        <button class="btn">Очистить</button>
-        <button class="btn"></button>
-        <button class="btn"></button>
-        <button class="btn"></button>
-        <button class="btn"></button>
-    </div>
+
+    <script src="./index.js"></script>
 </body>
 
 </html>
