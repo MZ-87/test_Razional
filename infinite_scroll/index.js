@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 })
 
 function fetchImages() {
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 10; i++) {
         fetch('https://dog.ceo/api/breeds/image/random')
             .then(response => response.json())
             .then(data => appendImg(data))
